@@ -1,0 +1,418 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background: #6190E8;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #A7BFE8, #6190E8);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  font-size: 1.5em;
+}
+h1::first-letter {
+  text-transform: capitalize;
+}
+@media only screen and (min-width: 1060px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
+p {
+  color: white;
+}
+
+.chemTable {
+  font-family: "Raleway", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(11, 60px);
+  grid-gap: 0;
+  padding: 1em;
+}
+@media only screen and (min-width: 1060px) {
+  .chemTable {
+    grid-gap: 1em;
+    grid-template-rows: repeat(11, 100px);
+  }
+}
+
+.pageInfo {
+  grid-column-start: 6;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  text-align: center;
+}
+
+.element {
+  background-color: grey;
+  opacity: 1;
+  padding: 5px;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  filter: drop-shadow(6px 6px 5px #555);
+}
+
+.atomicWeight {
+  text-align: left;
+  font-size: 0.75em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+.element_detail > .atomicWeight {
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.elementSymbol {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 1em;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+@media only screen and (min-width: 1060px) {
+  .elementSymbol {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .elementSymbol {
+    font-size: 2.2em;
+  }
+}
+.element_detail > .elementSymbol {
+  font-size: 1.5em;
+  font-family: "Raleway", sans-serif;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.elementName {
+  text-align: center;
+  font-size: 0;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  font-family: "Oswald", sans-serif;
+  word-break: break-all;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+@media only screen and (min-width: 780px) {
+  .elementName {
+    font-size: 0.75em;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .elementName {
+    font-size: 0.8em;
+  }
+}
+.element_detail > .elementName {
+  font-size: 2.5em;
+  font-family: "Raleway", sans-serif;
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.hidden {
+  display: none;
+  height: 0;
+  width: 0;
+}
+.element_detail .hidden {
+  display: inline;
+  height: auto;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.atomicMass {
+  text-align: center;
+  font-size: 0;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 8;
+  grid-row-end: -1;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+  font-family: "Oswald", sans-serif;
+}
+@media only screen and (min-width: 1060px) {
+  .atomicMass {
+    font-size: 0.6em;
+  }
+}
+.element_detail > .atomicMass {
+  font-size: 1.5em;
+  font-family: "Raleway", sans-serif;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+.meltPoint {
+  text-align: center;
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+
+.boilingPoint {
+  text-align: center;
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 8;
+  grid-row-end: 9;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+
+.elementCategory {
+  text-align: center;
+  font-size: 1.5em;
+  grid-column-start: 4;
+  grid-column-end: -1;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+
+.density {
+  text-align: center;
+  font-size: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 7;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+
+.summary {
+  text-align: left;
+  font-size: 0.8em;
+  line-height: 1.25;
+  grid-column-start: 4;
+  grid-column-end: -1;
+  grid-row-start: 4;
+  grid-row-end: 8;
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
+}
+@media only screen and (min-width: 1060px) {
+  .summary {
+    font-size: 1em;
+  }
+}
+
+/* --- Categories of elements ---*/
+.actinide {
+  background-color: #e8ef54;
+  color: black;
+}
+
+.alkali_metal {
+  background-color: #85ef54;
+  color: black;
+}
+
+.alkaline_earth_metal {
+  background-color: #ef548c;
+  color: white;
+}
+
+.diatomic_nonmetal {
+  background-color: #3390ff;
+  color: white;
+}
+
+.lanthanide {
+  background-color: #8554ef;
+  color: white;
+}
+
+.metalloid {
+  background-color: #b769e4;
+  color: white;
+}
+
+.noble_gas {
+  background-color: #ee833e;
+  color: white;
+}
+
+.polyatomic_nonmetal {
+  background-color: #176cd1;
+  color: white;
+}
+
+.post_transition_metal {
+  background-color: #17d14f;
+  color: white;
+}
+
+.transition_metal {
+  background-color: #17d1ac;
+  color: white;
+}
+
+.unknown_but_predicted_to_be_an_alkali_metal {
+  background-color: #67a04d;
+  color: white;
+}
+
+.unknown_predicted_to_be_noble_gas {
+  background-color: #9b6b4b;
+  color: white;
+}
+
+.unknown_probably_metalloid {
+  background-color: #7d5892;
+  color: white;
+}
+
+.unknown_probably_post_transition_metal {
+  background-color: #79c48f;
+  color: white;
+}
+
+.unknown_probably_transition_metal {
+  background-color: #5db8a5;
+  color: white;
+}
+
+/* --- Spacers--- */
+.actinide_spacer {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
+
+.lanthanide_spacer {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 7;
+  grid-row-end: 8;
+}
+
+.extra_row_spacer {
+  background-color: pink;
+  background: #6190E8;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #A7BFE8, pink);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: -0.5em;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+.extra_row_background {
+  background-color: pink;
+  margin: -0.5em;
+  grid-column-start: 3;
+  grid-column-end: 18;
+  grid-row-start: 9;
+  grid-row-end: 11;
+}
+
+.element_spacer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacer_text {
+  text-align: center;
+}
+
+div.element_detail {
+  grid-column-start: 3;
+  grid-column-end: 17;
+  grid-row-start: 1;
+  grid-row-end: 12;
+  z-index: 1000;
+  margin: 2em;
+}
+@media only screen and (min-width: 1060px) {
+  div.element_detail {
+    grid-column-start: 4;
+    grid-column-end: 16;
+    grid-row-start: 2;
+    grid-row-end: 8;
+  }
+}
